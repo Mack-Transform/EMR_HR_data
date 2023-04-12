@@ -1,0 +1,1 @@
+select * FROM {{source('dbt_demo_dev','dbt_employee')}}

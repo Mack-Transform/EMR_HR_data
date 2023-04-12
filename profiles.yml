@@ -1,0 +1,12 @@
+version: 2
+
+EMR_PROFILE:
+  target: dev
+  outputs:
+    dev:
+      type: spark
+      method: thrift
+      schema: dbt_demo_dev
+      host: ec2-3-141-42-60.us-east-2.compute.amazonaws.comy
+
+      

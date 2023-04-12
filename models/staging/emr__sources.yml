@@ -1,0 +1,32 @@
+version: 2
+sources:
+  - name: dbt_demo_dev
+    freshness: # default freshness
+      warn_after: {count: 12, period: day}
+      error_after: {count: 24, period: day}
+    loaded_at_field: created_at
+
+    tables:
+      - name: dbt_customer
+
+      - name: dbt_sale_fact
+        description: "Fact table to US sales transactions.  Loader- Python Scripts"
+        freshness:
+          warn_after: {count: 6, period: day}
+          error_after: {count: 12, period: day}
+
+      - name: dbt_orderdetails
+        freshness:
+          warn_after: {count: 6, period: day}
+          error_after: {count: 12, period: day}
+
+      - name: dbt_products
+      - name: dbt_employee
+      - name: dbt_inc_orders
+        freshness:
+          warn_after: {count: 6, period: day}
+          error_after: {count: 12, period: day}
+        columns:
+          - name: customer_id
+          
+            
